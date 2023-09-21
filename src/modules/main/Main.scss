@@ -1,0 +1,38 @@
+.App {
+  text-align: center;
+  display: flex;
+
+  .react-aside {
+    min-height: 100vh;
+    height: 100%;
+    width: 100%;
+    background-color: #2b2f3e;
+    padding: 10px;
+    width: 30vh;
+    h2 {
+      color: white;
+      font-size: 2rem;
+    }
+
+    p {
+      color: #5b5d63;
+    }
+  }
+  .react-main {
+    justify-items: center;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    ul {
+      margin: 0;
+      padding: 0;
+    }
+    .comment-input-container {
+      display: flex;
+      align-items: center;
+    }
+  }
+  form{
+    width:100%
+  }
+}

@@ -1,3 +1,28 @@
+# About application
+It s project for test on position junior frontend React
+
+# Text test task
+
+Тестове завдання
+
+Вимоги:
+Використовувати React
+Не використовувати сторонні бібліотеки для стилів
+Імʼя елемента при додаванні є обовʼязковим
+До можна елемента можна додавати коментарі, у коментаря є колір та текст
+Елементи можна видаляти
+Елементи при перезавантаженні сторінки повинні зберігатися
+
+Приклад робочого завдання https://earlold.github.io/react-test-dist/, потрібно зробити як в прикладі та закомітити завдання на гіт, після чого відправити результати через форму https://forms.gle/tawyyeEeG1GLyqkC9, у випадку некоректного посилання на репозиторій з виконаним тестовим завданням відповідь форми буде ігноруватись. Дякую за розуміння.
+
+# /TO-DO
+
+Need fix one bug in layout number comments after select other item
+Small clear and refactoring code and fails 
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
