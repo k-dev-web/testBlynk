@@ -20,8 +20,10 @@ It s project for test on position junior frontend React
 
 # /TO-DO
 
-Need fix one bug in layout number comments after select other item
-Small clear and refactoring code and fails 
+Need fix one bug in layout number comments after select other item.\
+Small clear and refactoring code and fails.\
+Refactoring style for mobile device.
+
 
 
 
