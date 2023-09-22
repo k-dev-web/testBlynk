@@ -6,9 +6,10 @@ import { CustomInputComponent } from '../shared/CustomInputComponent/CustomInput
 import { useData } from './hooks/useData';
 import { ItemViewComponent } from './components/ItemView/ItemViewComponent';
 import { CommentViewComponent } from './components/CommentView/CommentViewComponent';
+import { TComment } from './types';
 
 export function Main(): ReactElement {
-  const { items, addNewItem, removeItem, comments, changeSelected, selectedItem, addNewComment } = useData();
+  const { items, addNewItem, removeItem, changeSelected, selectedItem, addNewComment } = useData();
   return (
     <div className='App'>
       <div className='react-aside'>
@@ -26,7 +27,7 @@ export function Main(): ReactElement {
                 index={index}
                 removeItem={removeItem}
                 title={item.title}
-                commentCount={item.commentCount}
+                commentCount={item.comments?.length || 0}
                 onClick={changeSelected}
                 selected={selectedItem?.id === item.id}
               />
@@ -36,9 +37,10 @@ export function Main(): ReactElement {
         <Card>
           <CardTitle text={`Comment for ${selectedItem?.title || ''} item`} />
           <>
-            {comments.map((comment, index) => (
-              <CommentViewComponent key={`comment-${index}`} title={comment.title} color={comment.color} />
-            ))}
+            {selectedItem &&
+              selectedItem.comments?.map((comment: TComment, index: number) => (
+                <CommentViewComponent key={`comment-${index}`} title={comment.title} color={comment.color} />
+              ))}
           </>
           <div className='comment-input-container'>
             <CustomInputComponent submitClick={addNewComment} type='comment' />

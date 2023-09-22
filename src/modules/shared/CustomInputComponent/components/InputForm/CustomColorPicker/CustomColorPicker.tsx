@@ -6,7 +6,7 @@ export function CustomColorPicker({ ...props }): ReactElement {
   const { changeColor } = useHooks(props);
   return (
     <div className='CustomColorPicker'>
-      <input type='color' onChange={changeColor}></input>
+      <input type='color' onChange={changeColor} value={props.field.value}></input>
     </div>
   );
 }
