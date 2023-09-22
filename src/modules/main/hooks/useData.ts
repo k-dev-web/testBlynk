@@ -17,7 +17,7 @@ export function useData() {
 
   const addNewItem = useCallback(
     ({ text }: any) => {
-      setItems([...items, { id: new Date().getTime(), title: text }]);
+      setItems([...items, { id: new Date().getTime(), title: text, commentCount: 0 }]);
     },
     [items],
   );
@@ -51,8 +51,18 @@ export function useData() {
         return;
       }
       setComments([...comments, { color: color, title: text }]);
+      setItems(
+        items.map(item => {
+          if (selectedItem.id === item.id) {
+            return { ...item, commentCount: item.commentCount++ };
+          } else {
+            return item;
+          }
+        }),
+      );
+      console.log(items);
     },
-    [comments, selectedItem],
+    [comments, items, selectedItem],
   );
 
   useEffect(() => {
@@ -70,7 +80,7 @@ export function useData() {
     if (selectedItem) {
       LocalStorageService.setItem(selectedItem.id, comments);
     }
-  }, [comments, selectedItem]);
+  }, [comments]);
 
   return { items, comments, addNewItem, removeItem, changeSelected, selectedItem, addNewComment };
 }

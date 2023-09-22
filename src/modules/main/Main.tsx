@@ -5,12 +5,10 @@ import { CardTitle } from './components/CardTitle/CardTitle';
 import { CustomInputComponent } from '../shared/CustomInputComponent/CustomInputComponent';
 import { useData } from './hooks/useData';
 import { ItemViewComponent } from './components/ItemView/ItemViewComponent';
-import { useHooks } from './hooks/useHooks';
 import { CommentViewComponent } from './components/CommentView/CommentViewComponent';
 
 export function Main(): ReactElement {
   const { items, addNewItem, removeItem, comments, changeSelected, selectedItem, addNewComment } = useData();
-  const { getCountComment } = useHooks();
   return (
     <div className='App'>
       <div className='react-aside'>
@@ -28,7 +26,7 @@ export function Main(): ReactElement {
                 index={index}
                 removeItem={removeItem}
                 title={item.title}
-                commentCount={getCountComment(item.id)}
+                commentCount={item.commentCount}
                 onClick={changeSelected}
                 selected={selectedItem?.id === item.id}
               />
