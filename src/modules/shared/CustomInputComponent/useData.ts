@@ -3,7 +3,7 @@ import { useMemo } from 'react';
 import * as Yup from 'yup';
 
 const itemInitialValues = { text: '' };
-const commentInitialValues = { text: '', color: '#000' };
+const commentInitialValues = { text: '', color: '#000000' };
 
 export function useData(): { itemInitialValues: TInput; commentInitialValues: TInput } {
   return { itemInitialValues, commentInitialValues };
